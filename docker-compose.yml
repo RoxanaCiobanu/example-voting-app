@@ -47,11 +47,11 @@ services:
 
   redis:
     image: redis:5.0-alpine3.10
-    volumes:
-      - "./healthchecks:/healthchecks"
-    healthcheck:
-      test: /healthchecks/redis.sh
-      interval: "5s"
+#     volumes:
+#       - "./healthchecks:/healthchecks"
+#     healthcheck:
+#       test: /healthchecks/redis.sh
+#       interval: "5s"
     ports: ["6379"]
     networks:
       - back-tier
@@ -63,10 +63,10 @@ services:
       POSTGRES_PASSWORD: "postgres"
     volumes:
       - "db-data:/var/lib/postgresql/data"
-      - "./healthchecks:/healthchecks"
-    healthcheck:
-      test: /healthchecks/postgres.sh
-      interval: "5s"
+#       - "./healthchecks:/healthchecks"
+#     healthcheck:
+#       test: /healthchecks/postgres.sh
+#       interval: "5s"
     networks:
       - back-tier
 
