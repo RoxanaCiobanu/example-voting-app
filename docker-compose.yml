@@ -68,6 +68,7 @@ services:
     healthcheck:
       test: /healthchecks/postgres.sh
       interval: "5s"
+    ports: ["5432"]
     networks:
       - back-tier
 
